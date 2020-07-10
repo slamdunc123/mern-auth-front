@@ -13,7 +13,7 @@ const App = () => {
 	const [userData, setUserData] = useState({
 		token: undefined,
 		user: undefined,
-		test: 'hello',
+		testMsg: 'No User Logged In',
 	});
 
 	useEffect(() => {
@@ -40,7 +40,7 @@ const App = () => {
 				setUserData({
 					token,
 					user: userRes.data,
-					test: 'new hello',
+					testMsg: 'User Logged In',
 				});
 			}
 		};
@@ -56,12 +56,14 @@ const App = () => {
 					}}
 				>
 					<Header />
-					<Switch>
-						<Route exact path='/' component={Home} />
-						<Route path='/login' component={Login} />
-						<Route path='/register' component={Register} />
-						<Route path='*' component={Home} />
-					</Switch>
+					<div className='container'>
+						<Switch>
+							<Route exact path='/' component={Home} />
+							<Route path='/login' component={Login} />
+							<Route path='/register' component={Register} />
+							<Route path='*' component={Home} />
+						</Switch>
+					</div>
 				</UserContext.Provider>
 			</BrowserRouter>
 		</>
