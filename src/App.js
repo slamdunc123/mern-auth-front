@@ -13,7 +13,6 @@ const App = () => {
 	const [userData, setUserData] = useState({
 		token: undefined,
 		user: undefined,
-		testMsg: 'No User Logged In',
 	});
 
 	useEffect(() => {
